@@ -1,0 +1,64 @@
+body{
+    background-color: #c3cfe2;
+    padding: 50px 50px 50px 50px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.picture-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.picture-container img {
+    width:100%;
+    height: 100%;
+    border-radius: 3%;
+}
+
+.hidden {
+    background-color: darkblue;
+    height: 100%;
+    width: 100%;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.hidden button {
+    border: none;
+    padding: 5px;
+}
+
+.picture-container:hover .hidden {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+@media (max-width: 1000px){
+    main {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 690px){
+    main {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
